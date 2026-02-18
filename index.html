@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Евгений — Грузоперевозки</title>
-  <meta name="description" content="Грузoподъёмноcть до 5 тонн. Гидpо борт, лопaта, pохля. цeльнoметалличеcкий фуpгoн. Paзмep- д. 6.10/ш.2.45/в.2.40 м. 36м.куб. 15 евро пaллет, Moжeм предоставить 2 грузовика Рaбoтaeм c Юр. лицaми,ИП, Tак-же мoжeм пpeдоcтaвить рефрежepaтоp гру.">
+  <meta name="description" content="К вашим услугам: грузчики, квартирные и бизнес переезды, сборка-разборка мебели, работа на складах а также и дополнительные услуги по договорённости Грузовые машины от 1,5 до 5 т.">
     <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap');
 :root {
   --bg:#f8fafc;--surface:#ffffff;--text:#0f172a;--muted:#64748b;
@@ -195,44 +195,49 @@ input,textarea { width:100%; border-radius:12px; border:1.5px solid color-mix(in
       font-weight: 600;
     }
         
-        :root { --radius: 20px; }
-        .cards article,.service-list article,.rows article,.prices article,.timeline article { border-radius: 22px; }
-        .header { backdrop-filter: blur(12px) saturate(1.2); }
-        .btn { border-radius: 14px; }
+        :root { --radius: 14px; }
+        .cards article,.service-list article,.rows article,.prices article,.timeline article { border-radius: 14px; }
+        .header { backdrop-filter: blur(6px); }
+        .btn { border-radius: 999px; }
         
 
-        .section--muted { background: color-mix(in oklab, var(--dark) 84%, var(--surface) 16%); }
-        .cards article,.service-list article,.rows article,.prices article,.timeline article {
-          background: color-mix(in oklab, var(--surface) 40%, var(--dark) 60%);
-        }
+        .timeline article,.rows article { border-left: 3px solid color-mix(in oklab, var(--primary) 45%, transparent); }
         
   </style>
 </head>
 <body>
   
-<header class="header header--classic">
-  <div class="container navrow"><div class="logo">Евгений</div><span class="logo-kicker">ГРУЗОПЕРЕВОЗКИ</span><nav><a href="#services">Услуги</a><a href="#works">Работы</a><a href="#reviews">Отзывы</a><a href="#contact">Контакты</a></nav><a class="btn btn--sm" href="tel:+7 (900) 000-00-00">+7 (900) 000-00-00</a></div>
+<header class="header header--centered">
+  <div class="container centerlogo">Евгений</div>
+  <div class="container centerkicker">ГРУЗОПЕРЕВОЗКИ</div>
+  <div class="container navcenter"><nav><a href="#services">Услуги</a><a href="#works">Работы</a><a href="#process">Этапы</a><a href="#contact">Заявка</a></nav></div>
 </header>
 
-        <div class="avito-meta"><span>YT:devstack_demo_package_wordpress</span><span>Kaliningrad</span><span>+7 (900) 000-00-00</span></div>
+        <div class="avito-meta"><span>TF:BeTheme_v21.4.2</span><span>Kaliningrad</span><span>+7 (900) 000-00-00</span></div>
   
-<section class="hero hero--minimal" style="--hero:url('photo_1.jpg')">
-  <div class="overlay"></div>
-  <div class="container hero__content">
-    <h1>Евгений</h1>
-    <p>Грузoподъёмноcть до 5 тонн. Гидpо борт, лопaта, pохля. цeльнoметалличеcкий фуpгoн. Paзмep- д. 6.10/ш.2.45/в.2.40 м. 36м.куб. 15 евро пaллет, Moжeм предоставить 2 грузовика Рaбoтaeм c Юр. лицaми,ИП, Tак-же мoжeм пpeдоcтaвить рефрежepaтоp гру.</p>
-    <div class="hero__actions"><a class="btn" href="#contact">Получить предложение</a></div>
+<section class="hero hero--stats">
+  <div class="container grid2">
+    <div>
+      <p class="eyebrow">ТОЧНОСТЬ • СКОРОСТЬ • БЕЗОПАСНОСТЬ</p>
+      <h1>Евгений</h1>
+      <p>К вашим услугам: грузчики, квартирные и бизнес переезды, сборка-разборка мебели, работа на складах а также и дополнительные услуги по договорённости Грузовые машины от 1,5 до 5 т.</p>
+      <a class="btn" href="tel:+7 (900) 000-00-00">+7 (900) 000-00-00</a>
+    </div>
+    <div class="panel" style="background-image:url('photo_1.jpg')">
+      <div class="statgrid"><div><strong>30 мин</strong><span>подача</span></div><div><strong>365</strong><span>дней в году</span></div><div><strong>100%</strong><span>сохранность</span></div><div><strong>0 ₽</strong><span>скрытых доплат</span></div></div>
+    </div>
   </div>
 </section>
 
   
 <section id="services" class="section">
   <div class="container">
-    <h2>Почему нас выбирают</h2>
-    <div class="rows">
-      <article><h3>Материальная ответственность</h3><p>Фиксируем состояние имущества и отвечаем по договору.</p></article>
-      <article><h3>Точная подача без опозданий</h3><p>Планируем маршрут и соблюдаем сроки даже в пиковые часы.</p></article>
-      <article><h3>Опытные грузчики</h3><p>Команды с практикой перевозки сложных и хрупких грузов.</p></article>
+    <h2>Услуги под любые задачи</h2>
+    <div class="service-list">
+      <article><h3>Квартирный переезд</h3><p>Упаковка, погрузка, доставка и разгрузка под ключ.</p></article>
+      <article><h3>Офисный переезд</h3><p>Минимизируем простой бизнеса, работаем по таймингу.</p></article>
+      <article><h3>Грузовое такси</h3><p>Срочная подача транспорта, аккуратная перевозка.</p></article>
+      <article><h3>Межгород</h3><p>Доставка между городами с прозрачной логистикой.</p></article>
     </div>
   </div>
 </section>
@@ -253,10 +258,10 @@ input,textarea { width:100%; border-radius:12px; border:1.5px solid color-mix(in
 </section>
 
   
-<section id="works" class="section section--dark">
-  <div class="container">
-    <h2>Недавние работы</h2>
-    <div class="strip"><img src="photo_2.jpg" alt=""><img src="photo_3.jpg" alt=""><img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=1600&auto=format&fit=crop" alt=""><img src="https://images.unsplash.com/photo-1557838923-2985c318be48?w=1200&auto=format&fit=crop" alt=""><img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&auto=format&fit=crop" alt=""></div>
+<section id="works" class="section works-story">
+  <div class="container grid2">
+    <div class="story"><h2>Портфолио реальных задач</h2><p>Сложные переезды, хрупкие грузы, срочные маршруты. Каждый кейс мы ведём по чек-листу.</p><ul><li>Переезд 4-комнатной квартиры за 1 день</li><li>Офис 80 рабочих мест за выходные</li><li>Перевозка складского оборудования</li></ul></div>
+    <div class="story-grid"><img src="photo_2.jpg" alt=""><img src="photo_3.jpg" alt=""><img src="photo_4.jpg" alt=""><img src="photo_5.jpg" alt=""></div>
   </div>
 </section>
 
