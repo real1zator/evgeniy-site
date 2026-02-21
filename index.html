@@ -3,345 +3,1163 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Евгений — Грузоперевозки</title>
-  <meta name="description" content="К вашим услугам: грузчики, квартирные и бизнес переезды, сборка-разборка мебели, работа на складах а также и дополнительные услуги по договорённости Грузовые машины от 1,5 до 5 т.">
-    <style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap');
-:root {
-  --bg:#f8fafc;--surface:#ffffff;--text:#0f172a;--muted:#64748b;
-  --primary:#2563eb;--accent:#0ea5e9;--dark:#111827;
-  --font-body:'Inter',system-ui,sans-serif;
-  --font-title:'Manrope','Inter',system-ui,sans-serif;
-  --radius:16px;--shadow:0 20px 60px rgba(2,6,23,.12);
+  <title>Евгений — Грузоперевозки в Калининград</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+    :root{
+      --yellow:#f5c800;--yellow2:#e0b800;--black:#111;--dark:#1a1a1a;--dark2:#222;
+      --white:#fff;--light:#f4f4f4;--text:#222;--muted:#666;--border:#333;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Open Sans',sans-serif;color:var(--text);background:var(--white);}
+    a{text-decoration:none;color:inherit;}
+    .container{max-width:1160px;margin:0 auto;padding:0 20px;}
+
+    /* TOPBAR */
+    .topbar{background:var(--yellow);padding:8px 0;}
+    .topbar__inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+    .topbar__left{display:flex;align-items:center;gap:14px;}
+    .topbar__flags{display:flex;gap:6px;}
+    .flag{font-size:18px;}
+    .topbar__phone{font-size:14px;font-weight:700;color:var(--black);}
+    .topbar__socials{display:flex;gap:6px;}
+    .topbar__socials a{width:28px;height:28px;background:rgba(0,0,0,.12);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:14px;}
+    .topbar__cta{background:var(--black);color:var(--yellow);border:none;padding:7px 18px;border-radius:4px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;}
+
+    /* NAV */
+    .nav{background:var(--dark);position:sticky;top:0;z-index:100;}
+    .nav__inner{display:flex;align-items:center;height:56px;gap:0;}
+    .nav__logo{margin-right:28px;flex-shrink:0;}
+    .nav__logo div{background:var(--yellow);color:var(--black);font-family:'Oswald',sans-serif;font-size:13px;font-weight:700;padding:4px 10px;border-radius:4px;letter-spacing:1px;}
+    .nav__links{display:flex;flex:1;overflow-x:auto;scrollbar-width:none;}
+    .nav__links::-webkit-scrollbar{display:none;}
+    .nav__links a{font-family:'Oswald',sans-serif;font-size:12px;font-weight:500;color:rgba(255,255,255,.65);padding:0 12px;line-height:56px;white-space:nowrap;border-bottom:3px solid transparent;transition:.2s;}
+    .nav__links a:hover{color:var(--yellow);border-bottom-color:var(--yellow);}
+    @media(max-width:820px){.nav__links{display:none;}}
+
+    /* HERO BAND */
+    .hero-band{background:var(--yellow);padding:16px 0;text-align:center;}
+    .hero-band h1{font-family:'Oswald',sans-serif;font-size:clamp(26px,5vw,64px);font-weight:700;color:var(--black);letter-spacing:5px;}
+
+    /* WARNING STRIPE */
+    .warning-stripe{height:10px;background:repeating-linear-gradient(45deg,var(--yellow) 0,var(--yellow) 12px,var(--black) 12px,var(--black) 24px);}
+
+    /* HERO */
+    .hero{position:relative;overflow:hidden;min-height:420px;display:flex;align-items:center;background:var(--dark);}
+    .hero::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=1600&q=80') center/cover;opacity:.35;}
+    .hero__inner{position:relative;z-index:1;padding:60px 0;display:grid;grid-template-columns:1fr 460px;gap:40px;align-items:center;}
+    @media(max-width:800px){.hero__inner{grid-template-columns:1fr;}}
+    .hero h2{font-family:'Oswald',sans-serif;font-size:clamp(28px,4vw,54px);font-weight:700;color:var(--yellow);line-height:1.1;margin-bottom:14px;}
+    .hero__list{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:24px;}
+    .hero__list li{font-size:13px;color:rgba(255,255,255,.8);display:flex;gap:8px;align-items:flex-start;}
+    .hero__list li::before{content:'✓';color:var(--yellow);font-weight:700;}
+    .hero__btn{background:var(--yellow);color:var(--black);border:none;padding:13px 28px;border-radius:5px;font-family:'Oswald',sans-serif;font-size:15px;font-weight:700;cursor:pointer;}
+    .hero__right-img{width:100%;border-radius:8px;object-fit:cover;height:260px;}
+
+    /* SERVICES GRID */
+    .svc-section{padding:60px 0;background:var(--light);}
+    .svc-section h2{font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;text-align:center;margin-bottom:6px;}
+    .svc-section__sub{font-size:14px;color:var(--muted);text-align:center;margin-bottom:28px;}
+    .svc-bento{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:auto auto;gap:12px;}
+    @media(max-width:800px){.svc-bento{grid-template-columns:1fr 1fr;}}
+    .bento-card{position:relative;overflow:hidden;border-radius:8px;min-height:180px;cursor:pointer;}
+    .bento-card:nth-child(1){grid-row:1/3;}
+    .bento-card img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.55);transition:.3s;}
+    .bento-card:hover img{filter:brightness(.35);}
+    .bento-card__overlay{position:absolute;inset:0;padding:18px;display:flex;flex-direction:column;justify-content:flex-end;}
+    .bento-icon{font-size:24px;margin-bottom:8px;}
+    .bento-card h3{font-family:'Oswald',sans-serif;font-size:16px;font-weight:600;color:#fff;margin-bottom:6px;}
+    .bento-card p{font-size:12px;color:rgba(255,255,255,.7);line-height:1.5;}
+    .bento-card__link{margin-top:8px;font-size:11px;font-weight:700;color:var(--yellow);text-transform:uppercase;letter-spacing:.5px;}
+    .bento-dark{background:var(--dark2);}
+    .bento-yellow{background:var(--yellow);}
+    .bento-yellow h3{color:var(--black);}
+    .bento-yellow p{color:rgba(0,0,0,.65);}
+    .bento-yellow .bento-card__link{color:var(--black);}
+
+    /* STEPS ACCORDION */
+    .steps-section{padding:60px 0;background:var(--dark);}
+    .steps-section__inner{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+    @media(max-width:700px){.steps-section__inner{grid-template-columns:1fr;}}
+    .steps-section h2{font-family:'Oswald',sans-serif;font-size:32px;font-weight:700;color:#fff;line-height:1.2;margin-bottom:10px;}
+    .steps-section__sub{font-size:13px;color:rgba(255,255,255,.45);margin-bottom:24px;}
+    .acc-list{display:flex;flex-direction:column;gap:0;}
+    .acc-item{border-bottom:1px solid var(--border);}
+    .acc-q{display:flex;align-items:center;gap:14px;padding:14px 8px;cursor:pointer;}
+    .acc-num{width:36px;height:36px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-size:16px;font-weight:700;color:#fff;flex-shrink:0;}
+    .acc-num.c1{background:var(--dark2);}
+    .acc-num.c2{background:var(--dark2);}
+    .acc-num.c3{background:var(--yellow);color:var(--black);}
+    .acc-num.c4{background:#e67e22;}
+    .acc-num.c5{background:#2980b9;}
+    .acc-num.c6{background:#27ae60;}
+    .acc-q h4{font-family:'Oswald',sans-serif;font-size:15px;font-weight:600;color:#fff;flex:1;}
+    .acc-a{display:none;padding:0 8px 14px 58px;font-size:13px;color:rgba(255,255,255,.5);line-height:1.7;}
+    .acc-item.open .acc-a{display:block;}
+    .acc-item.open .acc-q h4{color:var(--yellow);}
+    .steps-truck{width:100%;border-radius:10px;object-fit:cover;height:320px;}
+
+    /* FAQ */
+    .faq{padding:60px 0;}
+    .faq h2{font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;margin-bottom:28px;}
+    .faq-list{display:flex;flex-direction:column;gap:8px;max-width:800px;}
+    .faq-item{border:1px solid var(--light);border-radius:6px;overflow:hidden;}
+    .faq-q{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;cursor:pointer;font-size:14px;font-weight:600;}
+    .faq-q .icon{font-size:20px;color:var(--muted);transition:.3s;}
+    .faq-item.open .faq-q .icon{transform:rotate(45deg);color:var(--yellow);}
+    .faq-a{display:none;padding:0 18px 14px;font-size:13px;color:var(--muted);line-height:1.8;}
+    .faq-item.open .faq-a{display:block;}
+
+    /* HOW WE WORK STEPS */
+    .how{padding:60px 0;background:var(--light);}
+    .how h2{font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;text-align:center;margin-bottom:28px;}
+    .how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+    @media(max-width:700px){.how-grid{grid-template-columns:1fr 1fr;}}
+    .how-card{position:relative;overflow:hidden;border-radius:8px;}
+    .how-card img{width:100%;height:160px;object-fit:cover;display:block;filter:brightness(.6);}
+    .how-card__overlay{position:absolute;inset:0;padding:14px;display:flex;flex-direction:column;justify-content:flex-end;}
+    .how-num{background:var(--yellow);color:var(--black);font-family:'Oswald',sans-serif;font-size:16px;font-weight:700;width:30px;height:30px;border-radius:4px;display:flex;align-items:center;justify-content:center;margin-bottom:8px;}
+    .how-card h4{font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;color:#fff;text-transform:uppercase;letter-spacing:.5px;}
+
+    /* CALLBACK */
+    .callback{background:var(--dark);padding:50px 0;}
+    .callback__inner{display:grid;grid-template-columns:1fr 360px;gap:40px;align-items:center;}
+    @media(max-width:700px){.callback__inner{grid-template-columns:1fr;}}
+    .callback h2{font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;color:#fff;margin-bottom:8px;}
+    .callback p{font-size:13px;color:rgba(255,255,255,.5);}
+    .callback .phone{font-size:20px;font-weight:700;color:var(--yellow);margin-top:10px;}
+    .callback-form{display:flex;flex-direction:column;gap:10px;}
+    .callback-form input{background:#2a2a2a;border:1px solid #333;color:#fff;padding:12px 14px;font-size:13px;font-family:inherit;border-radius:4px;outline:none;}
+    .callback-form input::placeholder{color:rgba(255,255,255,.3);}
+    .callback-form button{background:var(--yellow);color:var(--black);border:none;padding:12px;border-radius:4px;font-family:'Oswald',sans-serif;font-size:15px;font-weight:700;cursor:pointer;}
+
+    /* FOOTER */
+    .footer{background:#0a0a0a;border-top:2px solid var(--yellow);color:rgba(255,255,255,.45);padding:40px 0 12px;}
+    .footer__inner{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:24px;}
+    @media(max-width:700px){.footer__inner{grid-template-columns:1fr 1fr;}}
+    .footer__logo{margin-bottom:10px;}
+    .footer__logo span{background:var(--yellow);color:var(--black);font-family:'Oswald',sans-serif;font-size:16px;font-weight:700;padding:4px 10px;border-radius:4px;}
+    .footer h4{font-size:11px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
+    .footer ul{list-style:none;font-size:12px;}
+    .footer ul li{margin-bottom:7px;}
+    .footer ul li a:hover{color:var(--yellow);}
+    .footer__bottom{border-top:1px solid rgba(255,255,255,.06);margin-top:22px;padding-top:12px;text-align:center;font-size:11px;}
+  </style>
+<style>
+
+/* ===== CARGO BRAND STRIP ===== */
+.cargo-brand-strip {
+  display: block;
+  width: 100%;
+  background: linear-gradient(90deg, #111 0%, #1a1a1a 50%, #111 100%);
+  overflow: hidden;
+  line-height: 1;
+  padding: 0;
+  position: relative;
+  z-index: 99;
+  border-bottom: 3px solid rgba(255,200,0,0.7);
 }
-* { box-sizing:border-box; }
-html,body { margin:0; padding:0; background:var(--bg); color:var(--text); }
-body { font-family:var(--font-body); line-height:1.6; }
-h1,h2,h3,h4 { font-family:var(--font-title); line-height:1.15; margin:0 0 14px; }
-h1 { font-size:clamp(34px,5vw,62px); letter-spacing:-.02em; }
-h2 { font-size:clamp(28px,4vw,44px); letter-spacing:-.015em; margin-bottom:24px; }
-p { margin:0 0 12px; color:var(--muted); }
-.container { width:min(1200px,92%); margin:0 auto; }
-.section { padding:88px 0; }
-.section--muted { background:color-mix(in oklab, var(--surface) 76%, var(--primary) 8%); }
-.section--dark { background:var(--dark); }
-.section--dark h2,.section--dark p { color:#e2e8f0; }
+.cargo-brand-strip__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 0;
+  width: 100%;
+}
+.cargo-brand-strip__text {
+  font-family: 'Montserrat', 'Impact', 'Arial Black', sans-serif;
+  font-size: clamp(36px, 5.5vw, 90px);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  line-height: 0.9;
+  background: linear-gradient(90deg, #ffd000 0%, #fff8e0 40%, #ffd000 60%, #ffaa00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+  animation: gruz-shimmer 3s ease-in-out infinite;
+  background-size: 200% 100%;
+}
+@keyframes gruz-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
 
-.header { position:sticky; top:0; z-index:50; backdrop-filter:blur(8px); border-bottom:1px solid color-mix(in oklab, var(--primary) 15%, transparent); }
-.header--classic,.header--split,.header--centered,.header--transparent { background:color-mix(in oklab, var(--surface) 90%, transparent); }
-.header--transparent { position:absolute; width:100%; background:transparent; border-bottom:none; }
-.header--transparent .logo,
-.header--transparent nav a,
-.header--transparent .btn--ghost { color:#ffffff; border-color:rgba(255,255,255,.45); }
-.navrow { min-height:74px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
-.logo { font-weight:800; letter-spacing:.2px; font-size:20px; }
-.logo-kicker { font-size:11px; letter-spacing:.14em; text-transform:uppercase; font-weight:800; color:var(--primary); white-space:nowrap; }
-.centerkicker { text-align:center; font-size:11px; letter-spacing:.16em; text-transform:uppercase; font-weight:800; color:var(--primary); padding-top:4px; }
-nav { display:flex; gap:24px; flex-wrap:wrap; }
-nav a { text-decoration:none; color:var(--text); font-weight:600; }
-.topbar { background:var(--dark); color:#fff; }
-.topbar__row { min-height:38px; display:flex; justify-content:space-between; align-items:center; font-size:14px; }
-.topbar a { color:#fff; text-decoration:none; font-weight:700; }
-.centerlogo { text-align:center; padding-top:14px; font-size:24px; font-weight:800; }
-.navcenter { padding:10px 0 16px; display:flex; justify-content:center; }
+/* ===== HERO TRUCK OVERLAY ===== */
+.cargo-hero-truck-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0.5) saturate(1.2);
+  transition: transform 8s ease-out;
+}
+.cargo-hero-truck-overlay.parallax-active {
+  transform: scale(1.06);
+}
+.hero, .hero-band+.hero, section.hero {
+  position: relative;
+  overflow: hidden;
+}
 
-.btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; border:none; border-radius:999px; padding:13px 24px; cursor:pointer; font-weight:700; text-decoration:none; background:linear-gradient(135deg,var(--primary),var(--accent)); color:#fff; box-shadow:var(--shadow); }
-.btn--sm { padding:10px 16px; font-size:14px; }
-.btn--ghost { background:transparent; color:var(--text); border:1.5px solid color-mix(in oklab, var(--primary) 30%, var(--text) 20%); box-shadow:none; }
+/* ===== SCROLL-REVEAL ANIMATIONS ===== */
+[data-animate], [data-reveal] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+[data-animate].animated, [data-reveal].animated {
+  opacity: 1;
+  transform: none;
+}
+[data-animate-left] {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+[data-animate-left].animated { opacity: 1; transform: none; }
+[data-animate-right] {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+[data-animate-right].animated { opacity: 1; transform: none; }
+[data-animate-scale] {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+[data-animate-scale].animated { opacity: 1; transform: scale(1); }
 
-.hero { position:relative; overflow:hidden; }
-.hero .eyebrow { margin:0 0 10px; text-transform:uppercase; letter-spacing:.18em; font-size:12px; color:var(--accent); font-weight:800; }
-.hero__actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:18px; }
-.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:stretch; }
-.hero--media-left { padding:110px 0 80px; }
-.hero--media-left .media { border-radius:22px; min-height:500px; background-size:cover; background-position:center; box-shadow:var(--shadow); }
-.hero--media-left .content { background:var(--surface); border-radius:22px; padding:42px; box-shadow:var(--shadow); }
+/* Staggered children */
+[data-animate]:nth-child(2) { transition-delay: 0.1s; }
+[data-animate]:nth-child(3) { transition-delay: 0.2s; }
+[data-animate]:nth-child(4) { transition-delay: 0.3s; }
+[data-animate]:nth-child(5) { transition-delay: 0.4s; }
 
-.hero--full { min-height:94vh; display:grid; place-items:center; background-image:linear-gradient(130deg, rgba(2,6,23,.65), rgba(2,6,23,.45)), var(--hero); background-size:cover; background-position:center; }
-.hero__content--center { text-align:center; max-width:880px; color:#fff; }
-.hero__content--center p { color:#e5e7eb; }
+/* ===== FLOATING TRUCK SVG ===== */
+.truck-float-svg {
+  position: absolute;
+  right: -220px;
+  bottom: 0;
+  width: min(500px, 55vw);
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 1s 0.4s ease, transform 1.2s 0.4s ease;
+  z-index: 2;
+  pointer-events: none;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+}
+.truck-float-svg.animated {
+  opacity: 0.92;
+  transform: translateX(0);
+  right: -40px;
+}
 
-.hero--diag { min-height:90vh; display:grid; grid-template-columns:58% 42%; }
-.hero__diag-left { background:var(--dark); color:#fff; clip-path:polygon(0 0, 100% 0, 84% 100%, 0 100%); display:grid; align-items:center; }
-.hero__diag-left .inner { width:min(620px,88%); margin-left:auto; margin-right:8%; }
-.hero__diag-left p { color:#cbd5e1; }
-.hero__diag-right { background-size:cover; background-position:center; }
+/* ===== PULSE BUTTON ===== */
+.btn-pulse {
+  animation: btn-pulse-anim 2s ease-in-out infinite;
+}
+@keyframes btn-pulse-anim {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,208,0,0.5); }
+  50% { box-shadow: 0 0 0 16px rgba(255,208,0,0); }
+}
 
-.hero--glass { min-height:88vh; padding:90px 0; background-image:linear-gradient(120deg, rgba(2,6,23,.45), rgba(2,6,23,.5)), var(--hero); background-size:cover; background-position:center; }
-.glass { max-width:760px; background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.34); border-radius:24px; padding:38px; backdrop-filter:blur(14px); color:#fff; }
-.glass p { color:#eff6ff; }
-.stats { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:22px 0; }
-.stats div { background:rgba(15,23,42,.35); border-radius:14px; padding:14px; }
-.stats strong { display:block; font-size:24px; }
+/* ===== COUNTER ANIMATION ===== */
+.cargo-stat-num {
+  display: inline-block;
+  transition: color 0.3s;
+}
 
-.hero--minimal { min-height:86vh; background-image:var(--hero); background-size:cover; background-position:center; display:grid; align-items:end; }
-.hero--minimal .overlay { position:absolute; inset:0; background:linear-gradient(180deg, rgba(2,6,23,.35), rgba(2,6,23,.82)); }
-.hero--minimal .hero__content { position:relative; z-index:1; color:#fff; padding-bottom:92px; max-width:760px; }
-.hero--minimal p { color:#dbeafe; }
+/* ===== PARTICLES ===== */
+.cargo-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+.cargo-particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(255,208,0,0.6);
+  animation: particle-rise linear infinite;
+}
+@keyframes particle-rise {
+  0% { opacity: 0; transform: translateY(0) scale(1); }
+  20% { opacity: 1; }
+  80% { opacity: 0.5; }
+  100% { opacity: 0; transform: translateY(-120vh) scale(0.3); }
+}
 
-.hero--stats { padding:100px 0 80px; }
-.hero--stats .panel { border-radius:24px; min-height:520px; background-size:cover; background-position:center; position:relative; overflow:hidden; }
-.hero--stats .panel::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(2,6,23,.2), rgba(2,6,23,.72)); }
-.statgrid { position:absolute; inset:auto 18px 18px; z-index:2; display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
-.statgrid div { background:rgba(255,255,255,.88); border-radius:12px; padding:12px; }
-.statgrid strong { display:block; font-size:22px; color:var(--dark); }
-
-.cards { display:grid; gap:18px; }
-.cards--4 { grid-template-columns:repeat(4,1fr); }
-.cards--3 { grid-template-columns:repeat(3,1fr); }
-.cards article,.service-list article,.rows article,.prices article { background:var(--surface); border-radius:18px; padding:24px; box-shadow:var(--shadow); }
-
-.service-list { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
-.rows { display:grid; gap:14px; }
-
-.prices { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-.prices--six { grid-template-columns:repeat(3,1fr); }
-.prices .featured { border:2px solid var(--primary); transform:translateY(-6px); }
-.price { font-size:34px; font-weight:800; color:var(--primary); margin:8px 0 10px; }
-.prices ul { margin:0; padding-left:18px; color:var(--muted); }
-
-.works-story .story-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
-.works-story img,.masonry img,.strip img { width:100%; height:100%; border-radius:14px; object-fit:cover; display:block; }
-.masonry { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
-.masonry img:nth-child(2), .masonry img:nth-child(5) { grid-row:span 2; min-height:420px; }
-.masonry img { min-height:200px; }
-.strip { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; }
-.strip img { min-height:220px; }
-
-.timeline { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
-.timeline article { background:var(--surface); border-radius:14px; padding:18px; box-shadow:var(--shadow); }
-.timeline span { display:inline-flex; width:34px; height:34px; border-radius:999px; align-items:center; justify-content:center; background:var(--primary); color:#fff; font-weight:700; font-size:13px; margin-bottom:8px; }
-
-.lead { padding:86px 0; }
-.card-form,.panel-floating { max-width:760px; margin:0 auto; background:var(--surface); border-radius:22px; padding:30px; box-shadow:var(--shadow); }
-.lead--split { display:grid; grid-template-columns:44% 56%; }
-.lead__info { background:var(--dark); color:#fff; padding:44px; display:grid; gap:14px; align-content:center; }
-.lead__info p,.lead__info a { color:#e2e8f0; }
-.lead__form { background:color-mix(in oklab, var(--dark) 82%, #fff 18%); padding:32px; display:grid; align-items:center; }
-form { display:grid; gap:12px; }
-input,textarea { width:100%; border-radius:12px; border:1.5px solid color-mix(in oklab, var(--primary) 18%, #cbd5e1); padding:13px 14px; background:#fff; color:#0f172a; font:inherit; }
-.lead--split input,.lead--split textarea { background:#fff; }
-.fgrid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-
-.footer { background:var(--dark); color:#cbd5e1; padding:22px 0; }
-.footer__row { display:flex; justify-content:space-between; gap:12px; align-items:center; }
-
-.sticky-call,.sticky-tg { position:fixed; right:20px; width:56px; height:56px; border-radius:999px; display:grid; place-items:center; text-decoration:none; color:#fff; font-size:24px; box-shadow:0 12px 24px rgba(2,6,23,.25); z-index:60; }
-.sticky-call { bottom:92px; background:linear-gradient(135deg,#22c55e,#16a34a); }
-.sticky-tg { bottom:24px; background:linear-gradient(135deg,#0ea5e9,#2563eb); }
-
-.mobile-cta {
-  position: fixed;
+/* ===== ROAD LINE ANIMATION ===== */
+.cargo-road {
+  position: absolute;
+  bottom: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  z-index: 80;
-  display: none;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  padding: 8px;
-  background: color-mix(in oklab, var(--dark) 84%, #000 16%);
-  box-shadow: 0 -8px 28px rgba(2,6,23,.35);
+  height: 6px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255,208,0,0.8) 0px, rgba(255,208,0,0.8) 40px,
+    transparent 40px, transparent 80px
+  );
+  background-size: 80px 6px;
+  animation: road-move 1.2s linear infinite;
+  z-index: 3;
 }
-.mobile-cta a {
-  text-align: center;
-  text-decoration: none;
-  font-weight: 800;
+@keyframes road-move {
+  from { background-position: 0 0; }
+  to { background-position: -80px 0; }
+}
+
+/* ===== TELEGRAM FORM ===== */
+.cargo-tg-form-section {
+  padding: 70px 0;
+  background: linear-gradient(135deg, #111 0%, #1c1c1c 100%);
+  position: relative;
+  overflow: hidden;
+}
+.cargo-tg-form-section::before {
+  content: '🚚';
+  position: absolute;
+  font-size: 200px;
+  opacity: 0.04;
+  right: -20px;
+  bottom: -30px;
+  pointer-events: none;
+}
+.cargo-tg-form {
+  max-width: 640px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,208,0,0.2);
   border-radius: 12px;
-  padding: 12px 10px;
+  padding: 40px;
+  backdrop-filter: blur(8px);
+}
+.cargo-tg-form__title {
+  font-family: 'Montserrat', 'Impact', 'Arial Black', sans-serif;
+  font-size: 36px;
+  letter-spacing: 2px;
+  color: #ffd000;
+  margin-bottom: 6px;
+  text-align: center;
+}
+.cargo-tg-form__sub {
   font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  margin-bottom: 28px;
 }
-.mobile-cta__call {
+.cargo-tg-form input,
+.cargo-tg-form select,
+.cargo-tg-form textarea {
+  display: block;
+  width: 100%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,208,0,0.25);
   color: #fff;
-  background: linear-gradient(135deg,#22c55e,#16a34a);
+  padding: 13px 16px;
+  font-size: 14px;
+  font-family: inherit;
+  border-radius: 6px;
+  outline: none;
+  margin-bottom: 12px;
+  transition: border-color 0.3s, background 0.3s;
 }
-.mobile-cta__lead {
-  color: #fff;
-  background: linear-gradient(135deg,var(--primary),var(--accent));
+.cargo-tg-form input:focus,
+.cargo-tg-form textarea:focus {
+  border-color: #ffd000;
+  background: rgba(255,208,0,0.07);
+}
+.cargo-tg-form input::placeholder,
+.cargo-tg-form textarea::placeholder {
+  color: rgba(255,255,255,0.3);
+}
+.cargo-tg-form textarea { height: 90px; resize: vertical; }
+.cargo-tg-form__btn {
+  display: block;
+  width: 100%;
+  background: linear-gradient(90deg, #ffd000, #ffaa00);
+  color: #111;
+  border: none;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  animation: btn-pulse-anim 2s ease-in-out infinite;
+  margin-top: 6px;
+  font-family: 'Montserrat', 'Impact', 'Arial Black', sans-serif;
+}
+.cargo-tg-form__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(255,208,0,0.4);
+}
+.cargo-tg-form__success {
+  display: none;
+  text-align: center;
+  padding: 30px;
+  color: #4caf50;
+  font-size: 22px;
+  font-weight: 700;
 }
 
-@media (max-width:1024px) {
-  .cards--4,.cards--3,.prices,.timeline,.strip { grid-template-columns:repeat(2,1fr); }
-  .grid2,.hero--diag,.lead--split,.service-list { grid-template-columns:1fr; }
-  .hero__diag-left { clip-path:none; }
-  .masonry { grid-template-columns:repeat(2,1fr); }
-}
-@media (max-width:700px) {
-  nav { display:none; }
-  .cards--4,.cards--3,.prices,.timeline,.strip,.masonry,.service-list { grid-template-columns:1fr; }
-  .topbar__row,.footer__row { flex-direction:column; align-items:flex-start; }
-  .stats { grid-template-columns:1fr; }
-  .fgrid { grid-template-columns:1fr; }
-  .hero--media-left .content,.glass,.card-form,.panel-floating { padding:22px; }
-  .logo-kicker,.centerkicker { display:none; }
-  .sticky-call,.sticky-tg { display:none; }
-  .mobile-cta { display:grid; }
-  body { padding-bottom: 78px; }
-}</style>
-  <style>
-    .avito-meta {
-      margin: 12px auto 0;
-      width: min(1200px, 92%);
-      color: var(--muted);
-      font-size: 14px;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .avito-meta span {
-      border: 1px solid color-mix(in oklab, var(--primary) 20%, transparent);
-      border-radius: 999px;
-      padding: 6px 11px;
-      background: color-mix(in oklab, var(--surface) 80%, var(--primary) 8%);
-      font-weight: 600;
-    }
-        
-        :root { --radius: 14px; }
-        .cards article,.service-list article,.rows article,.prices article,.timeline article { border-radius: 14px; }
-        .header { backdrop-filter: blur(6px); }
-        .btn { border-radius: 999px; }
-        
 
-        .timeline article,.rows article { border-left: 3px solid color-mix(in oklab, var(--primary) 45%, transparent); }
-        
-  </style>
+/* ===== MOBILE RESPONSIVE (injected by patcher) ===== */
+
+/* -- Общие мобильные фиксы -- */
+@media (max-width: 768px) {
+  html { font-size: 15px; }
+  .container { padding: 0 16px; }
+  section { padding: 50px 0 !important; }
+
+  /* -- HEADER -- */
+  .header__inner {
+    height: auto;
+    min-height: 56px;
+    padding: 8px 0;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .logo { gap: 8px; }
+  .logo__icon { width: 36px; height: 36px; font-size: 18px; }
+  .logo__text { font-size: 18px !important; letter-spacing: 1px; }
+  .header__phone {
+    font-size: 14px !important;
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+  .nav { display: none !important; }
+
+  /* -- BRAND STRIP -- */
+  .cargo-brand-strip__text {
+    font-size: clamp(28px, 8vw, 52px) !important;
+    letter-spacing: 0.02em;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  .cargo-brand-strip__inner { padding: 10px 0; }
+
+  /* -- HERO -- */
+  .hero {
+    padding: 0 !important;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+  }
+  .hero .container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .cargo-hero-truck-overlay {
+    filter: brightness(0.45) saturate(1.3) !important;
+  }
+  .hero__content { max-width: 100%; }
+  .hero__title {
+    font-size: clamp(32px, 9vw, 50px) !important;
+    letter-spacing: 1px;
+    line-height: 1.05 !important;
+    margin-bottom: 16px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  .hero__subtitle {
+    font-size: 15px !important;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    color: rgba(255,255,255,0.92) !important;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+  }
+  .hero__features {
+    flex-direction: column !important;
+    gap: 8px !important;
+    margin-bottom: 24px;
+  }
+  .hero__feature {
+    font-size: 12px !important;
+    padding: 10px 16px !important;
+    text-align: center;
+  }
+  .btn {
+    padding: 14px 28px;
+    font-size: 14px;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* -- HERO TEXT COLOR FIX (for dark overlay) -- */
+  .hero .hero__title,
+  .hero .hero__content h1 {
+    color: #fff !important;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  }
+
+  /* -- SECTIONS -- */
+  .s-title__heading,
+  .section-title,
+  .section__title {
+    font-size: clamp(26px, 7vw, 40px) !important;
+    letter-spacing: 1px;
+    line-height: 1.1;
+    word-break: break-word;
+  }
+
+  /* -- GRIDS -- */
+  .services-grid,
+  .types-grid,
+  .advantages__content,
+  .footer__grid,
+  .benefits-grid,
+  .pricing-grid,
+  .features-grid,
+  .stats-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  /* -- SERVICE CARDS -- */
+  .service-card, .svc-card, .pricing-card, .benefit-card, .feature-card {
+    padding: 28px 20px !important;
+  }
+  .service-card__title, .svc-card__title, .pricing-card__title {
+    font-size: 22px !important;
+  }
+  .service-card__icon { font-size: 42px !important; }
+
+  /* -- ADVANTAGES -- */
+  .advantages__image { order: -1; }
+  .advantages__text h2 {
+    font-size: clamp(28px, 7vw, 42px) !important;
+    line-height: 1.1;
+  }
+  .advantages__list li {
+    font-size: 14px;
+    padding: 12px 0;
+  }
+
+  /* -- TYPE CARDS -- */
+  .type-card__image { height: 200px; }
+  .type-card__content { padding: 24px 16px; }
+  .type-card__title { font-size: 24px !important; }
+  .type-card__price { font-size: 22px; }
+
+  /* -- CTA -- */
+  .cta-section h2 {
+    font-size: clamp(28px, 7vw, 44px) !important;
+    line-height: 1.1;
+  }
+  .cta-section p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .cta-section__content { max-width: 100%; padding: 0 8px; }
+
+  /* -- FORM -- */
+  .form-wrapper {
+    padding: 24px 16px !important;
+    border-width: 3px;
+  }
+  .form-wrapper input,
+  .form-wrapper textarea {
+    padding: 14px 16px;
+    font-size: 16px;
+    border-width: 2px;
+  }
+  .cargo-tg-form {
+    padding: 24px 16px !important;
+    margin: 0 -8px;
+  }
+  .cargo-tg-form__title { font-size: 26px !important; }
+  .cargo-tg-form__sub { font-size: 13px; }
+  .cargo-tg-form input,
+  .cargo-tg-form textarea {
+    font-size: 16px;
+    padding: 14px 14px;
+  }
+  .cargo-tg-form__btn {
+    font-size: 15px;
+    padding: 16px;
+  }
+
+  /* -- FOOTER -- */
+  .footer { padding: 40px 0 20px; }
+  .footer__logo { font-size: 24px !important; }
+  .footer__desc { font-size: 13px; }
+  .footer__grid { gap: 24px !important; }
+
+  /* -- FLOATING ELEMENTS -- */
+  .sticky-call, .sticky-tg { display: none !important; }
+  .mobile-cta {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+  }
+  .mobile-cta a {
+    padding: 16px 8px;
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+  body { padding-bottom: 60px !important; }
+
+  /* -- Stats -- */
+  .stat__num, .cargo-stat-num {
+    font-size: 32px !important;
+  }
+  .stat__label {
+    font-size: 12px !important;
+  }
+
+  /* -- MISC -- */
+  .truck-float-svg { display: none !important; }
+}
+
+/* -- Extra small screens (< 400px) -- */
+@media (max-width: 400px) {
+  .logo__text { font-size: 15px !important; }
+  .header__phone { font-size: 12px !important; }
+  .hero__title { font-size: 28px !important; }
+  .cargo-brand-strip__text { font-size: 24px !important; }
+  .s-title__heading { font-size: 24px !important; }
+  .service-card__title { font-size: 20px !important; }
+}
+
+/* -- Landscape phones -- */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero { min-height: 70vh; }
+}
+
+
+/* Hero gradient overlay for text readability */
+.cargo-hero-truck-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.1) 0%,
+    rgba(0,0,0,0.3) 40%,
+    rgba(0,0,0,0.5) 100%
+  );
+  pointer-events: none;
+}
+.hero .hero__title,
+.hero .hero__content h1 {
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.5), 0 0 40px rgba(0,0,0,0.3);
+}
+.hero .hero__subtitle {
+  color: rgba(255,255,255,0.92);
+  text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+}
+.hero .hero__feature {
+  background: rgba(0,0,0,0.7);
+  color: #ffd000;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,208,0,0.3);
+}
+.hero .btn--yellow {
+  background: #ffd000;
+  color: #111;
+  border: none;
+}
+.hero .btn--yellow:hover {
+  background: #ffe040;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(255,208,0,0.4);
+}
+
+
+/* Toast notification animation */
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+  15% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  85% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-10px); }
+}
+</style>
 </head>
 <body>
-  
-<header class="header header--centered">
-  <div class="container centerlogo">Евгений</div>
-  <div class="container centerkicker">ГРУЗОПЕРЕВОЗКИ</div>
-  <div class="container navcenter"><nav><a href="#services">Услуги</a><a href="#works">Работы</a><a href="#process">Этапы</a><a href="#contact">Заявка</a></nav></div>
-</header>
 
-        <div class="avito-meta"><span>TF:BeTheme_v21.4.2</span><span>Kaliningrad</span><span>+7 (900) 000-00-00</span></div>
-  
-<section class="hero hero--stats">
-  <div class="container grid2">
-    <div>
-      <p class="eyebrow">ТОЧНОСТЬ • СКОРОСТЬ • БЕЗОПАСНОСТЬ</p>
-      <h1>Евгений</h1>
-      <p>К вашим услугам: грузчики, квартирные и бизнес переезды, сборка-разборка мебели, работа на складах а также и дополнительные услуги по договорённости Грузовые машины от 1,5 до 5 т.</p>
-      <a class="btn" href="tel:+7 (900) 000-00-00">+7 (900) 000-00-00</a>
-    </div>
-    <div class="panel" style="background-image:url('photo_1.jpg')">
-      <div class="statgrid"><div><strong>30 мин</strong><span>подача</span></div><div><strong>365</strong><span>дней в году</span></div><div><strong>100%</strong><span>сохранность</span></div><div><strong>0 ₽</strong><span>скрытых доплат</span></div></div>
-    </div>
-  </div>
-</section>
-
-  
-<section id="services" class="section">
+<!-- TOPBAR -->
+<div class="topbar">
   <div class="container">
-    <h2>Услуги под любые задачи</h2>
-    <div class="service-list">
-      <article><h3>Квартирный переезд</h3><p>Упаковка, погрузка, доставка и разгрузка под ключ.</p></article>
-      <article><h3>Офисный переезд</h3><p>Минимизируем простой бизнеса, работаем по таймингу.</p></article>
-      <article><h3>Грузовое такси</h3><p>Срочная подача транспорта, аккуратная перевозка.</p></article>
-      <article><h3>Межгород</h3><p>Доставка между городами с прозрачной логистикой.</p></article>
+    <div class="topbar__inner">
+      <div class="topbar__left">
+        <div class="topbar__flags">
+          <span class="flag">🇷🇺</span><span class="flag">🇩🇪</span><span class="flag">🇵🇱</span>
+        </div>
+        <div class="topbar__phone">📞 +7 (495) 123 456 78-98</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;">
+        <div class="topbar__socials">
+          <a href="#">💬</a>
+          <a href="#">📞</a>
+          <a href="#">✈</a>
+        </div>
+        <button class="topbar__cta">Обратный звонок</button>
+      </div>
     </div>
   </div>
-</section>
-
-    
-<section id="services-prices" class="section section--muted">
-  <div class="container">
-    <h2>Услуги и цены</h2>
-    <div class="prices prices--six">
-      <article><h3>Газель 1.5т</h3><p class="price">от 2 000 ₽</p><ul><li>Подача от 30 мин</li><li>По городу и области</li></ul></article>
-      <article><h3>Переезд квартиры</h3><p class="price">от 5 000 ₽</p><ul><li>2 грузчика</li><li>Аккуратная упаковка</li></ul></article>
-      <article><h3>Офисный переезд</h3><p class="price">от 8 000 ₽</p><ul><li>Без простоя бизнеса</li><li>Работа по таймингу</li></ul></article>
-      <article><h3>Грузчики</h3><p class="price">от 700 ₽/ч</p><ul><li>Опытная бригада</li><li>Почасовая оплата</li></ul></article>
-      <article><h3>Межгород</h3><p class="price">от 12 000 ₽</p><ul><li>По РФ</li><li>Фиксированный маршрут</li></ul></article>
-      <article><h3>Срочная подача</h3><p class="price">от 2 500 ₽</p><ul><li>День-в-день</li><li>Приоритетный выезд</li></ul></article>
-    </div>
-  </div>
-</section>
-
-  
-<section id="works" class="section works-story">
-  <div class="container grid2">
-    <div class="story"><h2>Портфолио реальных задач</h2><p>Сложные переезды, хрупкие грузы, срочные маршруты. Каждый кейс мы ведём по чек-листу.</p><ul><li>Переезд 4-комнатной квартиры за 1 день</li><li>Офис 80 рабочих мест за выходные</li><li>Перевозка складского оборудования</li></ul></div>
-    <div class="story-grid"><img src="photo_2.jpg" alt=""><img src="photo_3.jpg" alt=""><img src="photo_4.jpg" alt=""><img src="photo_5.jpg" alt=""></div>
-  </div>
-</section>
-
-  
-<section id="reviews" class="section section--muted">
-  <div class="container">
-    <h2>Отзывы клиентов</h2>
-    <div class="cards cards--3">
-      <article><p>"Переехали аккуратно, без царапин и задержек. Цена совпала с расчётом."</p><h4>Анна, квартирный переезд</h4></article>
-      <article><p>"Офис перевезли за выходные, в понедельник команда вышла без простоя."</p><h4>Игорь, руководитель IT-компании</h4></article>
-      <article><p>"Очень чёткая коммуникация, всё по таймингу, рекомендую."</p><h4>Марина, доставка техники</h4></article>
-    </div>
-  </div>
-</section>
-
-  
-<section id="process" class="section">
-  <div class="container">
-    <h2>Как проходит перевозка</h2>
-    <div class="timeline">
-      <article><span>01</span><h3>Заявка</h3><p>Быстрый расчёт стоимости и времени.</p></article>
-      <article><span>02</span><h3>Подготовка</h3><p>Упаковка, маркировка, чек-лист.</p></article>
-      <article><span>03</span><h3>Перевозка</h3><p>Бережная погрузка и доставка по маршруту.</p></article>
-      <article><span>04</span><h3>Сдача</h3><p>Разгрузка, расстановка, закрывающие документы.</p></article>
-    </div>
-  </div>
-</section>
-
-  
-<section id="contact" class="lead lead--floating">
-  <div class="container">
-    <div class="panel-floating">
-      <h2>Рассчитайте стоимость переезда</h2>
-      <form class="js-form" data-bot-token="8434584674:AAGvxeQulQDyaESBQeu7rF5siC6HHs2McrE" data-chat-id="549333404">
-        <div class="fgrid"><input name="name" placeholder="Имя" required><input name="phone" placeholder="Телефон" required></div>
-        <textarea name="message" rows="4" placeholder="Адреса и детали"></textarea>
-        <button type="submit" class="btn">Получить расчёт</button>
-      </form>
-    </div>
-  </div>
-</section>
-
-  
-<footer class="footer">
-  <div class="container footer__row"><strong>Евгений</strong><span>© 2026. Все права защищены.</span></div>
-</footer>
-<a class="sticky-call" href="tel:+79000000000">📞</a>
-<a class="sticky-tg" href="https://t.me/+79000000000">✈️</a>
-<div class="mobile-cta">
-  <a class="mobile-cta__call" href="tel:+79000000000">Позвонить</a>
-  <a class="mobile-cta__lead" href="#contact">Заявка</a>
 </div>
 
-  <script>
-for (const form of document.querySelectorAll('.js-form')) {
-  form.addEventListener('submit', async (event) => {
-    event.preventDefault();
-    const payload = new FormData(form);
-    const msg = [
-      '🚚 Новая заявка с сайта',
-      '',
-      'Имя: ' + (payload.get('name') || ''),
-      'Телефон: ' + (payload.get('phone') || ''),
-      'Сообщение: ' + (payload.get('message') || '')
-    ].join('\n');
+<!-- NAV -->
+<nav class="nav">
+  <div class="container">
+    <div class="nav__inner">
+      <div class="nav__logo"><div>Евгений</div></div>
+      <div class="nav__links">
+        <a href="#svc">Эвакуация</a>
+        <a href="#svc">Шиномонтаж</a>
+        <a href="#svc">СТО</a>
+        <a href="#svc">Мобильный сервис</a>
+        <a href="#svc">Полиция и ДАИ</a>
+        <a href="#svc">ДТП-менеджмент</a>
+        <a href="#footer">Контакты</a>
+      </div>
+    </div>
+  </div>
+</nav>
 
-    try {
-      const res = await fetch('https://api.telegram.org/bot' + form.dataset.botToken + '/sendMessage', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ chat_id: form.dataset.chatId, text: msg })
-      });
-      if (!res.ok) throw new Error('telegram_error');
-      alert('Заявка отправлена. Свяжемся с вами в ближайшее время.');
-      form.reset();
-    } catch (e) {
-      alert('Не удалось отправить заявку. Позвоните нам напрямую.');
+<!-- HERO BAND -->
+<!-- CARGO BRAND STRIP -->
+<div class="cargo-brand-strip">
+  <div class="cargo-brand-strip__inner">
+    <span class="cargo-brand-strip__text">ГРУЗОПЕРЕВОЗКИ</span>
+  </div>
+</div>
+<div class="hero-band">
+<div class="cargo-hero-truck-overlay" style="background-image:url('photo_1.jpg')" aria-hidden="true"></div>
+<div class="cargo-particles"></div>
+<div class="cargo-road"></div>
+
+
+
+  <h1>ГРУЗОПЕРЕВОЗКИ</h1>
+</div>
+<div class="warning-stripe"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__inner">
+      <div>
+        <h2>ТЕХНИЧЕСКАЯ<br>ПОМОЩЬ 🔧<br>В ДОРОГЕ</h2>
+        <ul class="hero__list">
+          <li>Профессиональный языковой барьер и решение технических проблем 24/7</li>
+          <li>Профессиональная поддержка для водителей на всём маршруте</li>
+          <li>Помогаем по-русски</li>
+        </ul>
+        <button class="hero__btn">Экстренная помощь</button>
+      </div>
+      <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=600&q=80" alt="Грузовик в дороге" class="hero__right-img">
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES BENTO -->
+<section class="svc-section" id="svc">
+  <div class="container">
+    <h2>МЫ ГАРАНТИРУЕМ БЫСТРУЮ<br>И КАЧЕСТВЕННУЮ ПОДДЕРЖКУ</h2>
+    <p class="svc-section__sub">Полный спектр услуг для грузового транспорта в дороге</p>
+    <div class="svc-bento">
+      <div class="bento-card">
+        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=500&q=70" alt="Эвакуация">
+        <div class="bento-card__overlay">
+          <div class="bento-icon">🪝</div>
+          <h3>Эвакуация</h3>
+          <p>24/7 эвакуация для грузовых автомобилей. Помощь на трассах и ДТП.</p>
+          <div class="bento-card__link">Подробнее →</div>
+        </div>
+      </div>
+      <div class="bento-card bento-dark">
+        <div class="bento-card__overlay" style="position:relative;background:var(--dark2);inset:auto;padding:20px;border-radius:8px;height:100%;min-height:180px;">
+          <div class="bento-icon">⚙️</div>
+          <h3>СТО для грузовиков</h3>
+          <p>Быстро сможем организовать устранение любой поломки на пути.</p>
+          <div class="bento-card__link">Подробнее →</div>
+        </div>
+      </div>
+      <div class="bento-card">
+        <img src="https://images.unsplash.com/photo-1586528116022-6e26b7c5fc41?w=400&q=70" alt="Шиномонтаж">
+        <div class="bento-card__overlay">
+          <div class="bento-icon">🔧</div>
+          <h3>Грузовой шиномонтаж</h3>
+          <p>24/7 Мобильный шиномонтаж для грузовиков и спецтехники.</p>
+          <div class="bento-card__link">Подробнее →</div>
+        </div>
+      </div>
+      <div class="bento-card bento-dark">
+        <div class="bento-card__overlay" style="position:relative;background:var(--dark2);inset:auto;padding:20px;border-radius:8px;height:100%;min-height:180px;">
+          <div class="bento-icon">🚔</div>
+          <h3>Мобильный сервис</h3>
+          <p>Мы выезжаем к Вам, чтобы произвести весь необходимый ремонт.</p>
+          <div class="bento-card__link">Подробнее →</div>
+        </div>
+      </div>
+      <div class="bento-card bento-yellow">
+        <div class="bento-card__overlay" style="position:relative;background:var(--yellow);inset:auto;padding:20px;border-radius:8px;height:100%;min-height:180px;">
+          <div class="bento-icon">🚨</div>
+          <h3>Помощь при ДТП</h3>
+          <p>Оказываем юридическую помощь и взаимодействие с полицией при ДТП.</p>
+          <div class="bento-card__link">Подробнее →</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS ACCORDION -->
+<section class="steps-section" id="steps">
+  <div class="container">
+    <div class="steps-section__inner">
+      <div>
+        <h2>КРУГЛОСУТОЧНАЯ<br>ПОДДЕРЖКА НА<br>ДОРОГЕ</h2>
+        <p class="steps-section__sub">С нами легко — всё под контролем</p>
+        <div class="acc-list">
+          <div class="acc-item open">
+            <div class="acc-q">
+              <div class="acc-num c1">01</div>
+              <h4>Свяжитесь с нами</h4>
+            </div>
+            <div class="acc-a">Позвоните на экстренный номер или напишите в мессенджер. Ответим в течение нескольких минут.</div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-q">
+              <div class="acc-num c2">02</div>
+              <h4>Сообщите оператору данные</h4>
+            </div>
+            <div class="acc-a">Уточните данные: местоположение, характер поломки, информацию о транспорте.</div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-q">
+              <div class="acc-num c3">03</div>
+              <h4>Цена</h4>
+            </div>
+            <div class="acc-a">Мы сразу называем ориентировочную стоимость услуг для вас.</div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-q">
+              <div class="acc-num c4">04</div>
+              <h4>Оплата</h4>
+            </div>
+            <div class="acc-a">Безналичная оплата или наличными после решения проблемы.</div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-q">
+              <div class="acc-num c5">05</div>
+              <h4>Выезд бригады</h4>
+            </div>
+            <div class="acc-a">Наш специалист выезжает к вам незамедлительно.</div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-q">
+              <div class="acc-num c6">06</div>
+              <h4>Вы снова в пути</h4>
+            </div>
+            <div class="acc-a">Мы всегда рады завершить работу качественно. После завершения — чистый отчёт и правый сход работы.</div>
+          </div>
+        </div>
+      </div>
+      <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=600&q=80" alt="Грузовик" class="steps-truck">
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <h2>ВОПРОС / ОТВЕТ</h2>
+    <div class="faq-list">
+      <div class="faq-item open">
+        <div class="faq-q">Что делать, если мой грузовик сломался в дороге? <span class="icon">+</span></div>
+        <div class="faq-a">Прежде всего, обеспечьте безопасность: включите аварийную сигнализацию и установите знаки аварийной остановки на расстоянии около 150 метров. Свяжитесь с нами по экстренному номеру.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Как долго мне придётся ждать прибытия помощи? <span class="icon">+</span></div>
+        <div class="faq-a">Среднее время прибытия бригады — 30–60 минут в зависимости от вашего местоположения.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Стоимость выезда мобильного техника <span class="icon">+</span></div>
+        <div class="faq-a">Стоимость зависит от удалённости и характера работ. Всегда называем цену до начала оказания услуг.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Можно ли выполнить ремонт грузовика прямо на месте? <span class="icon">+</span></div>
+        <div class="faq-a">Да, большинство ремонтов мобильная бригада выполняет непосредственно на месте поломки.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Как осуществляется оплата услуг? <span class="icon">+</span></div>
+        <div class="faq-a">Принимаем наличные, банковские переводы, оплату по корпоративным договорам.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section class="how">
+  <div class="container">
+    <h2>КАК МЫ РАБОТАЕМ:</h2>
+    <div class="how-grid">
+      <div class="how-card">
+        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=400&q=70" alt="Звонок">
+        <div class="how-card__overlay">
+          <div class="how-num">01</div>
+          <h4>Звонок специалисту</h4>
+        </div>
+      </div>
+      <div class="how-card">
+        <img src="https://images.unsplash.com/photo-1586528116022-6e26b7c5fc41?w=400&q=70" alt="Данные">
+        <div class="how-card__overlay">
+          <div class="how-num">02</div>
+          <h4>Сообщите данные о транспорте</h4>
+        </div>
+      </div>
+      <div class="how-card">
+        <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=400&q=70" alt="Выезд">
+        <div class="how-card__overlay">
+          <div class="how-num">03</div>
+          <h4>Оказываем услуги техпомощи</h4>
+        </div>
+      </div>
+      <div class="how-card">
+        <img src="https://images.unsplash.com/photo-1561361058-c24cecae35ca?w=400&q=70" alt="Решение">
+        <div class="how-card__overlay">
+          <div class="how-num">04</div>
+          <h4>Проблема решена</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALLBACK -->
+<div class="callback">
+  <div class="container">
+    <div class="callback__inner">
+      <div>
+        <h2>ХОТИТЕ, ЧТОБЫ МЫ<br>ПЕРЕЗВОНИЛИ ВАМ?</h2>
+        <p>Оставьте заявку на звонок — мы перезвоним через 10 минут и предложим подходящие решения!</p>
+        <div class="phone">📞 +7 (495) 123 456 78-98</div>
+      </div>
+      <div class="callback-form">
+        <input type="text" placeholder="Ваше имя">
+        <input type="tel" placeholder="+7 (___) ___-__-__">
+        <button>Обратный звонок</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+
+<!-- ===== TELEGRAM FORM (без PHP, для GitHub Pages) ===== -->
+<section class="cargo-tg-form-section" id="cargo-zayavka">
+  <div class="container" style="max-width:1200px;margin:0 auto;padding:0 24px;">
+    <form class="cargo-tg-form" data-bot-token="8434584674:AAGvxeQulQDyaESBQeu7rF5siC6HHs2McrE" data-chat-id="549333404" autocomplete="off">
+      <div class="cargo-tg-form__title">ОСТАВИТЬ ЗАЯВКУ</div>
+      <div class="cargo-tg-form__sub">Ответим в течение 15 минут · Бесплатный выезд на замер</div>
+      <input name="name" type="text" placeholder="Ваше имя" required>
+      <input name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
+      <input name="cargo" type="text" placeholder="Что перевозите? (груз, объём)">
+      <input name="route" type="text" placeholder="Маршрут (откуда — куда)">
+      <textarea name="message" placeholder="Дополнительные пожелания..."></textarea>
+      <button type="submit" class="cargo-tg-form__btn">📲 ОТПРАВИТЬ В TELEGRAM</button>
+      <div class="cargo-tg-form__success">✅ Заявка отправлена! Ожидайте звонка.</div>
+    </form>
+  </div>
+</section>
+
+<footer class="footer" id="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__logo"><span>Евгений</span></div>
+        <p style="font-size:12px;line-height:1.7;margin-top:8px;">Техническая помощь грузовому<br>транспорту в дороге. 24/7.</p>
+        <p style="font-size:12px;margin-top:8px;color:var(--yellow);">📞 +7 (495) 123 456 78-98</p>
+      </div>
+      <div>
+        <h4>Услуги</h4>
+        <ul><li><a href="#">Грузовой эвакуатор</a></li><li><a href="#">Шиномонтаж</a></li><li><a href="#">Мобильный сервис</a></li><li><a href="#">ДТП-менеджмент</a></li></ul>
+      </div>
+      <div>
+        <h4>Информация</h4>
+        <ul><li><a href="#">О нас</a></li><li><a href="#">Impressum</a></li><li><a href="#">Datenschutz</a></li></ul>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <ul><li>+7 (900) 000-00-00</li><li>info@info.ru</li></ul>
+      </div>
+    </div>
+    <div class="footer__bottom">© 2026 Евгений. Все права защищены.</div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.acc-q').forEach(q=>{
+    q.addEventListener('click',()=>{
+      const item=q.parentElement;
+      const isOpen=item.classList.contains('open');
+      document.querySelectorAll('.acc-item').forEach(x=>x.classList.remove('open'));
+      if(!isOpen) item.classList.add('open');
+    });
+  });
+  document.querySelectorAll('.faq-q').forEach(q=>{
+    q.addEventListener('click',()=>{
+      const item=q.parentElement;
+      const isOpen=item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(x=>x.classList.remove('open'));
+      if(!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+
+<script>
+(function(){
+  // ===== SCROLL REVEAL =====
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animated');
+        revealObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('[data-animate],[data-reveal],[data-animate-left],[data-animate-right],[data-animate-scale]')
+    .forEach(el => revealObs.observe(el));
+
+  // ===== PARALLAX TRUCK =====
+  const truckOverlay = document.querySelector('.cargo-hero-truck-overlay');
+  if (truckOverlay) {
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      truckOverlay.style.transform = 'scale(1.06) translateY(' + (scrolled * 0.15) + 'px)';
+    }, {passive: true});
+    setTimeout(() => truckOverlay.classList.add('parallax-active'), 300);
+  }
+
+  // ===== ANIMATED COUNTERS =====
+  function animCounter(el, target, duration) {
+    let start = 0;
+    const step = target / (duration / 16);
+    const timer = setInterval(() => {
+      start += step;
+      if (start >= target) { start = target; clearInterval(timer); }
+      el.textContent = Math.round(start).toLocaleString('ru') + (el.dataset.suffix || '');
+    }, 16);
+  }
+  const cntObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        if (!el.dataset.counted) {
+          el.dataset.counted = '1';
+          animCounter(el, parseInt(el.dataset.target, 10), 1400);
+        }
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('[data-target]').forEach(el => cntObs.observe(el));
+
+  // ===== PARTICLES =====
+  const particleContainers = document.querySelectorAll('.cargo-particles');
+  particleContainers.forEach(container => {
+    for (let i = 0; i < 18; i++) {
+      const p = document.createElement('span');
+      p.className = 'cargo-particle';
+      p.style.cssText = [
+        'left:' + (Math.random()*100) + '%',
+        'bottom:' + (Math.random()*30) + 'px',
+        'width:' + (2 + Math.random()*4) + 'px',
+        'height:' + (2 + Math.random()*4) + 'px',
+        'animation-duration:' + (4 + Math.random()*8) + 's',
+        'animation-delay:' + (Math.random()*6) + 's',
+        'opacity:' + (0.3 + Math.random()*0.5)
+      ].join(';');
+      container.appendChild(p);
     }
   });
-}
+
+  // ===== TELEGRAM FORM =====
+  document.querySelectorAll('.cargo-tg-form[data-bot-token]').forEach(form => {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = form.querySelector('.cargo-tg-form__btn');
+      const success = form.querySelector('.cargo-tg-form__success');
+      const fields = form.querySelectorAll('input,textarea,select');
+      btn.disabled = true;
+      btn.textContent = 'ОТПРАВЛЯЕМ...';
+      const lines = ['\uD83D\uDE9A Новая заявка с сайта ГРУЗОПЕРЕВОЗКИ', ''];
+      fields.forEach(f => {
+        if (f.name && f.value) {
+          const labels = {name:'Имя',phone:'Телефон',cargo:'Груз',route:'Маршрут',date:'Дата',message:'Сообщение',weight:'Вес'};
+          lines.push((labels[f.name] || f.name) + ': ' + f.value);
+        }
+      });
+      lines.push('', '\uD83D\uDCCD Сайт: ' + window.location.hostname);
+      try {
+        const res = await fetch('https://api.telegram.org/bot' + form.dataset.botToken + '/sendMessage', {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({chat_id: 549333404, text: lines.join('\n'), parse_mode: 'HTML'})
+        });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        if (success) { success.style.display = 'block'; }
+        fields.forEach(f => { if (f.tagName !== 'SELECT') f.value = ''; });
+        btn.textContent = '✅ ОТПРАВЛЕНО!';
+        setTimeout(() => {
+          btn.disabled = false;
+          btn.textContent = 'ОТПРАВИТЬ ЗАЯВКУ';
+          if (success) success.style.display = 'none';
+        }, 4000);
+      } catch(err) {
+        btn.disabled = false;
+        btn.textContent = 'ОТПРАВИТЬ ЗАЯВКУ';
+        (function(){var _n=document.createElement('div');_n.textContent='Ошибка отправки. Позвоните нам напрямую.';_n.style.cssText='position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#f44336;color:#fff;padding:16px 32px;border-radius:8px;z-index:9999;font-size:16px;font-weight:700;box-shadow:0 4px 20px rgba(0,0,0,0.3);animation:fadeInOut 3s forwards';document.body.appendChild(_n);setTimeout(function(){_n.remove()},4000)})();
+      }
+    });
+  });
+
+  // ===== OLD FORM SUPPORT (если есть .js-form) =====
+  document.querySelectorAll('.js-form').forEach(form => {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const fd = new FormData(form);
+      const token = form.dataset.botToken || '8434584674:AAGvxeQulQDyaESBQeu7rF5siC6HHs2McrE';
+      const chatId = form.dataset.chatId || '549333404';
+      const msg = ['\uD83D\uDE9A Заявка с сайта ГРУЗОПЕРЕВОЗКИ','',
+        '\uD83D\uDC64 Имя: ' + (fd.get('name')||''),
+        '\uD83D\uDCF1 Телефон: ' + (fd.get('phone')||''),
+        '\uD83D\uDCE6 Груз: ' + (fd.get('cargo')||''),
+        '\uD83D\uDCDD Сообщение: ' + (fd.get('message')||''),
+        '\uD83C\uDF10 Сайт: ' + window.location.hostname
+      ].join('\n');
+      try {
+        const res = await fetch('https://api.telegram.org/bot' + token + '/sendMessage', {
+          method:'POST', headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({chat_id: 549333404, text: msg})
+        });
+        if (!res.ok) throw new Error();
+        (function(){var _n=document.createElement('div');_n.textContent='\u2705 Заявка отправлена! Перезвоним в течение 15 минут.';_n.style.cssText='position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#4caf50;color:#fff;padding:16px 32px;border-radius:8px;z-index:9999;font-size:16px;font-weight:700;box-shadow:0 4px 20px rgba(0,0,0,0.3);animation:fadeInOut 3s forwards';document.body.appendChild(_n);setTimeout(function(){_n.remove()},3500)})();
+        form.reset();
+      } catch {
+        (function(){var _n=document.createElement('div');_n.textContent='Ошибка отправки. Позвоните нам напрямую.';_n.style.cssText='position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#f44336;color:#fff;padding:16px 32px;border-radius:8px;z-index:9999;font-size:16px;font-weight:700;box-shadow:0 4px 20px rgba(0,0,0,0.3);animation:fadeInOut 3s forwards';document.body.appendChild(_n);setTimeout(function(){_n.remove()},4000)})();
+      }
+    });
+  });
+})();
 </script>
+
 </body>
 </html>
